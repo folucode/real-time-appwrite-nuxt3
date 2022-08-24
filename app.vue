@@ -22,7 +22,9 @@ import { Client, Account, Databases } from 'appwrite';
 
 const client = new Client();
 
-client.setEndpoint('http://localhost/v1').setProject('62ffd38121455a2d42e2');
+client
+  .setEndpoint('http://localhost/v1') // Your Appwrite Endpoint
+  .setProject('62ffd38121455a2d42e2');
 
 const account = new Account(client);
 
@@ -41,7 +43,6 @@ export default {
   data() {
     return {
       message: 'Welcome!',
-      count: 0,
       notifications: [],
       toast: '',
     };
