@@ -94,9 +94,7 @@ export default {
     if (account.get !== null) {
       try {
         client.subscribe('documents', (response) => {
-          let secs = Date.now() - response.timestamp;
-          let date = new Date(secs);
-          this.message = `This event was called at ${date.toTimeString()}`;
+          this.message = `This event was called at ${response.timestamp}`;
         });
       } catch (error) {
         console.log(error, 'error');
